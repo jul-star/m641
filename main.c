@@ -20,12 +20,11 @@ int main(int c, char *v)
 	if (*p==-1) perror("shmat");
 
 	long int i;
-	int  meg = 1024;
-	//int step = meg/sizeof(char);
+	int  meg = 1024*1024;
 	
 	for (i=0; i< meg; ++i)
 	{
-		p[i]=42;
+		*((char*)p+i)=42;
 	}
 	
 	return 0;
